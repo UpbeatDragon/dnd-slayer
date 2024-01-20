@@ -14,9 +14,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <ul className="inline-flex pb-6 text-xl ">
-        <li className="pr-6 pl-6"><Link href={'/'}>Home</Link></li>
-        <li className="pr-6"><Link href={'/spells'}>Spells</Link></li>
-        <li className="pr-6"><Link href={'/monsters'}>Monsters</Link></li>
+        <li className="pr-6 pl-6"><Link href={'/'} className="hover:text-red-500">Home</Link></li>
+        <li className="pr-6"><Link href={'/spells'} className="hover:text-red-500">Spells</Link></li>
+        <li className="pr-6"><Link href={'/monsters'} className="hover:text-red-500">Monsters</Link></li>
+        <li className="pr-6"><Link href={'/races'} className="hover:text-red-500">Races</Link></li>
+        <li className="pr-6"><Link href={'/classes'} className="hover:text-red-500">Classes</Link></li>
         </ul>
         <>
         {children}
