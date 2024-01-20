@@ -6,7 +6,6 @@ export default async function Spells() {
     const allMonsters = await res.json()
     return(
         <>
-        <Link href={'/'}>Home</Link>
         <h1 className="text-2xl text-red-500">Monsters!</h1>
         <ul>
             {
