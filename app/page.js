@@ -4,7 +4,11 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <>
-    <Link href={'/spells'}>Spells</Link>
+    <ul>
+    <li><Link href={'/spells'}>Spells</Link></li>
+    <li><Link href={'/monsters'}>Monsters</Link></li>
+    </ul>
+    
     </>
   )
 }
