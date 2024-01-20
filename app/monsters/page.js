@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-export default async function Spells() {
+export default async function Monsters() {
 
     const res = await fetch("https://www.dnd5eapi.co/api/monsters")
     const allMonsters = await res.json()
