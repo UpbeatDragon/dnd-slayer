@@ -1,4 +1,5 @@
 import Link from "next/link"
+import ComboBox from "../components/combo-box/combo-box"
 
 export default async function Monsters() {
 
@@ -7,13 +8,8 @@ export default async function Monsters() {
     return(
         <>
         <h1 className="text-2xl text-red-500">Monsters!</h1>
-        <ul>
-            {
-                allMonsters.results.map(
-                    s=>(<li key={s.index}>{s.name}</li>)
-                )
-            }
-        </ul>
+        <ComboBox data={allMonsters.results} title={"Monster Name"} selectedItem={allMonsters?.results[0]}/>
+        
         
         </>
     )
