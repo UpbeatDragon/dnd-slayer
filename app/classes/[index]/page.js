@@ -1,10 +1,12 @@
+import Heading2 from "@/app/components/heading2/heading2"
+
 export default async function Class({params}) {
     const res = await fetch(`https://www.dnd5eapi.co/api/classes/${params.index}`)
     const classInfo = await res.json()
     return(
         <>
             <h1 className="text-2xl pb-4 font-bold">{classInfo.name}</h1>
-            <h2 className="text-xl border-b-2 border-red-500 border-solid mb-2 font-semibold">Class features</h2>
+            <Heading2>Class features</Heading2>
             <p className="pb-2">As a {classInfo.name.toLowerCase()}, you gain the following class features.</p>
             <h3 className="font-semibold text-lg">Hit Points</h3>
             <div className="flex flex-col md:flex-row">
