@@ -10,7 +10,7 @@ export default async function Races() {
         <div className="grid-cols-3 grid gap-4">
         {
                 allRaces.results.map(
-                    s=>(<div key={s.index}>{s.name}</div>)
+                    s=>(<Link key={s.index} href={`/races/${s.index}`} className="hover:text-red-500">{s.name}</Link>)
                 )
             }
         </div>
