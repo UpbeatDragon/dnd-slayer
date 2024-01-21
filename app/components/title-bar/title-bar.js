@@ -3,6 +3,7 @@
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
@@ -17,6 +18,9 @@ function classNames(...classes) {
 }
 
 export default function TitleBar() {
+
+  const router = useRouter()
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -74,7 +78,7 @@ export default function TitleBar() {
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
-                >
+                  onClick={e => {e.preventDefault(); router.push(item.href)}}>
                   {item.name}
                 </Disclosure.Button>
               ))}
