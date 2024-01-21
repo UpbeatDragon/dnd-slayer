@@ -14,9 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <TitleBar></TitleBar>
-        <>
-        {children}
-        </>
+        <div className="container mx-auto sm:px-6 lg:px-8">{children}</div>
       </body>
     </html>
   )

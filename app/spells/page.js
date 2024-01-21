@@ -1,4 +1,4 @@
-import Link from "next/link"
+import ComboBox from "../components/combo-box/combo-box"
 
 export default async function Spells() {
 
@@ -7,13 +7,8 @@ export default async function Spells() {
     return(
         <>
         <h1 className="text-2xl text-red-500">Spells!</h1>
-        <ul>
-            {
-                allSpells.results.map(
-                    s=>(<li key={s.index}>{s.name}</li>)
-                )
-            }
-        </ul>
+        <ComboBox data={allSpells.results} title={"Spell Name"} selectedItem={allSpells?.results[0]}/>
+        
         
         </>
     )
