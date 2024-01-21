@@ -3,8 +3,14 @@ export default async function Class({params}) {
     const classInfo = await res.json()
     return(
         <>
-        <h1>Hello {params.index}</h1>
-        <pre>{JSON.stringify(classInfo,null,2)}</pre>
+        <h1 className="text-2xl text-red-500 pb-4 font-bold">{classInfo.name}</h1>
+        <h2 className="text-xl border-b-2 border-red-500 border-solid mb-2 font-semibold">Class features</h2>
+        <p className="pb-2">As a {classInfo.name.toLowerCase()}, you gain the following class features.</p>
+        <h3 className="font-semibold text-lg">Hit Points</h3>
+        <div className="flex flex-row">
+            <div className="font-semibold pr-1">Hit Dice:</div>
+            <div>1d{classInfo.hit_die} per {classInfo.name.toLowerCase()} level.</div>
+        </div>
         </>
     )
         
