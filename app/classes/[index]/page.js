@@ -11,6 +11,14 @@ export default async function Class({params}) {
             <div className="font-semibold pr-1">Hit Dice:</div>
             <div>1d{classInfo.hit_die} per {classInfo.name.toLowerCase()} level.</div>
         </div>
+        <div className="flex flex-row">
+            <div className="font-semibold pr-1">Hit points at 1st Level:</div>
+            <div>{classInfo.hit_die} + your constitution modifier</div>
+        </div>
+        <div className="flex flex-row">
+            <div className="font-semibold pr-1">Hit points at Higher Levels:</div>
+            <div>1d{classInfo.hit_die} + your constitution modifier per {classInfo.name.toLowerCase()} level after 1st</div>
+        </div>
         </>
     )
         
