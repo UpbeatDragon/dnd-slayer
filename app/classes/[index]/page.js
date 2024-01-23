@@ -1,3 +1,4 @@
+import Heading1 from "@/app/components/heading1/heading1"
 import Heading2 from "@/app/components/heading2/heading2"
 
 export default async function Class({params}) {
@@ -5,7 +6,7 @@ export default async function Class({params}) {
     const classInfo = await res.json()
     return(
         <>
-            <h1 className="text-2xl pb-4 font-bold">{classInfo.name}</h1>
+            <Heading1>{classInfo.name}</Heading1>
             <Heading2>Class features</Heading2>
             <p className="pb-2">As a {classInfo.name.toLowerCase()}, you gain the following class features.</p>
             <h3 className="font-semibold text-lg">Hit Points</h3>
