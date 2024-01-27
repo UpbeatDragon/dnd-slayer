@@ -1,14 +1,14 @@
 'use client'
 
 import { useState } from 'react'
-import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
+import { ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import { Combobox } from '@headlessui/react'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function ComboBox({data, title, selectedItem=null}) {
+export default function ComboBox({data, title, onChange, selectedItem=null,}) {
   const [query, setQuery] = useState('')
   const [selectedData, setSelectedData] = useState(selectedItem?.name)
   console.log(selectedData)
@@ -19,8 +19,13 @@ export default function ComboBox({data, title, selectedItem=null}) {
           return d.name.toLowerCase().startsWith(query.toLowerCase())
         })
 
+  const handleChange = (e) => {
+    setSelectedData(e)
+    onChange(e)
+  }
+
   return (
-    <Combobox as="div" value={selectedData} onChange={setSelectedData}>
+    <Combobox as="div" value={selectedData} onChange={(newValue)=>handleChange(newValue)}>
       <Combobox.Label className="block text-sm font-medium leading-6 text-gray-900">{title}</Combobox.Label>
       <div className="relative mt-2">
         <Combobox.Input
